@@ -1,0 +1,25 @@
+.details{position:absolute;top:50px;left:0px;bottom: 0px;right: 0px;background:#ddd;}
+.details h1 img{width:100%;}
+.details .details_main{padding:0 20px;}
+.details_main h2{font-size:16px; color:#333;}
+.details_main div{font-size:12px;color:#666;margin:10px 0;}
+.details_main .btn{text-align: center;margin-top:40px;}
+.details_main .btn button{border:none;outline: none;background:#FE8233;width:180Px;height:40px;font-size: 16px;color: #fff;border-radius:20px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

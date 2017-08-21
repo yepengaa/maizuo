@@ -1,0 +1,18 @@
+.address{background:red;}
+
+
+
+.city-appear {
+    transform: translateY(-100%);
+  }
+  
+.city-appear.city-appear-active {
+    transform: translateY(0);
+    transition: all 0.4s ease-in;
+}
+
+.address.leave{
+    transform: translateY(-100%);
+    transition: all 0.4s linear;
+}
+
