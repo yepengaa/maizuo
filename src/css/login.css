@@ -1,0 +1,24 @@
+.login{width:100%;display: flex;flex-direction:column;align-items: center;}
+.login p{width:260px;height:10px;border:1px solid #666;border-top:none;margin-top:60px;position:relative;}
+.login p input{padding-left:10px;height:30px;font-size:16px;position:absolute;bottom:0px;left:0px;
+    color:#666;border:none;outline: none;background:transparent;}
+.login .btn{text-align: center;margin-top:100px;}
+.login .btn button{border:none;outline: none;width:160px;height:40px;
+    font-size:16px;color:#fff;border-radius:20px;background:#FE8233;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

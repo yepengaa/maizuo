@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --port 8888",
+    "dev": "webpack-dev-server --open --port 8080",
     "build": "webpack --progress -p"
   },
   "repository": {

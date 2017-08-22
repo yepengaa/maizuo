@@ -3,7 +3,7 @@ import '../css/details.css';
 import HomeServices from '../services/Homeservices';
 
 export default class Details extends Component{
-    constructor({match}){
+constructor({match}){
         super();
         this.state={
             match,
@@ -20,7 +20,7 @@ export default class Details extends Component{
                     <h2>影片简介</h2>
                     <div class="director"><span>导　　演: </span><span>{film.director}</span></div>
                     <div><span>主　　演: </span></div>
-                    <div  class="nation"><span>地区语言: </span>{film.nation}({film.language})</div>
+                    <div class="nation"><span>地区语言: </span>{film.nation}({film.language})</div>
                     <div class="category"><span>类　　型: </span><span>{film.category}</span></div>
                     <div class="premiereAt"><span>上映日期: </span><span>{film.premiereAt}</span></div>
                     <div class="synopsis">{film.synopsis}</div>

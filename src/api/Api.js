@@ -7,14 +7,19 @@ const homeHot = '/v4/api/film/now-playing?page=1&count=5';
 const beAboutTo = '/v4/api/film/coming-soon?page=1&count=3'
 //详情页信息http://m.maizuo.com/v4/api/film/3828?__t=1503302814754
 const detailsApi = '/v4/api/film/'
-//请求影片数据http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7
+//请求影片热映数据http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7
 const filmApi = '/v4/api/film/now-playing?&count=7'
+//请求即将上映http://m.maizuo.com/v4/api/film/coming-soon?page=1&count=7
+const comingSoonApi = '/v4/api/film/coming-soon?count=7'
+
+
 export default{
     homeBannerApi,
     homeHot,
     beAboutTo,
     detailsApi,
-    filmApi
+    filmApi,
+    comingSoonApi
 }
 
 

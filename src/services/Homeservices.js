@@ -86,12 +86,40 @@ function getFilmHot(page){
                 newObj.cinemaCount=item.cinemaCount;
                 newObj.watchCount=item.watchCount;
                 newObj.name=item.name;
-                newObj.coverImg=item.cover.origin;
+                newObj.coverImg=item.poster.origin;
                 newObj.intro=item.intro;
                 return newObj
             })
             
             resolve(newDAta);
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    })
+}
+//请求即将上映影片数据
+function getComingSoon(page){
+    return new Promise((resolve,rejscet)=>{
+        axios.get(`${API.comingSoonApi}&page=${page}`)
+        .then((response)=>{
+            console.log(response)
+            let newData=response.data.data.films.map((item)=>{
+                let newObj = {};
+                newObj.id=item.id;
+                newObj.name=item.name;
+                newObj.intro=item.intro;
+                newObj.coverImg=item.poster.origin;
+                let d = new Date(item.premiereAt);
+                let month=d.getMonth()+1;
+                let day = d.getDate();
+                let time = month+'月'+day+'日上映';
+                let weekDay = '星期'+d.getDay();
+                newObj.premiereAt=time;
+                newObj.weekDay = weekDay;
+                return newObj;
+            })
+            resolve(newData)
         })
         .catch((error)=>{
             console.log(error)
@@ -110,13 +138,13 @@ function getFilmHot(page){
 
 
 
-
 export default {
     getHomeBanner,
     getHomeHot,
     getBeAboutTo,
     setDetails,
-    getFilmHot
+    getFilmHot,
+    getComingSoon
 }
 
 

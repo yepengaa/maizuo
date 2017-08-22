@@ -49,7 +49,6 @@ export default class App extends Component {
                     <Route path='/clip' component={Clip} /> 
                     <Route path='/address' component={Address} />
                     <Route path='/details/:id' component={Details} />                
-                    
                 </div>
             </BrowserRouter>
         )

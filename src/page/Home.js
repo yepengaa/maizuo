@@ -17,7 +17,7 @@ export default class Home extends Component{
     }
     render(){
         let isShow = {
-            display:this.state.bannerData?'block':'none'
+            display:this.state.bannerData.length>0?'block':'none'
         }
         return(
             <div class="home_main">

@@ -1,0 +1,25 @@
+.film{position:absolute;top:0px;left:0px;bottom:0px;right:0px;}
+.film .wrap{padding:0 10px;}
+.film .wrap .nav{border-bottom:1px solid #FC9A50;width:100%;height:40px;display:flex;justify-content:space-around;align-items:center;}
+.film .wrap .nav button{background:transparent;width:50%;height:100%;font-size:16px;color:#666;border:none;outline: none;}
+.wrap .main .hot_showing .list,.be_about .list{padding:20px 0;border-bottom:1px dotted #ccc;display:flex;}
+.wrap .main .hot_showing .list>img,.be_about .list>img{width:60px;margin-right:10px;height:80px;}
+.wrap .main .hot_showing .list .message,.be_about .list .message{flex:1;}
+.wrap .main .hot_showing .list .message h2,.be_about .list .message h2{display: flex;justify-content:space-between;}
+.wrap .main .hot_showing .list .message h2 strong,.be_about .list .message h2 strong{font-size:16px;color:#333;}
+.hot_showing .list .message h2 i{font-size:18px;color:#FC7002;}
+.hot_showing .list .message h2 span,.be_about .list .message h2 span{font-size:14px;color:#ddd;margin-right:10px;}
+.hot_showing .list .message>div{display: flex;margin:5px 0;}
+.hot_showing .list .message>div,.hot_showing .list .message>div p{font-size:12px;color:#666;}
+.hot_showing .list .message>div p span{font-size:12px;color:#8AA2BF;}
+.hot_showing .list .message div .buy{margin-left: 30px;}
+
+.be_about .list .message p{margin:8px 0;font-size:12px;color:#666;}
+.be_about .list .message p:nth-of-type(2){color:#FC7002;font-size:14px;}
+
+.film .wrap .nav button.checkedColor{color:#FE6E00;border-bottom:3px solid #FE6E00;}
+
+
+
+
+
