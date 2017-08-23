@@ -11,7 +11,6 @@ import Shopping from './page/Shopping.js'
 import Clip from './page/Clip.js'
 import Address from './page/Address.js'
 import Details from './page/Details'
-import Reserve from './page/Reserve'
 
 import HeaderCom from './views/common/AppHeader.js';
 import LeftNav from './views/common/LeftNav.js';
@@ -31,7 +30,7 @@ export default class App extends Component {
         console.log(12)
         return ( 
             <BrowserRouter>
-                <div id="mai_zuo">
+                <div>
                     <HeaderCom menuHandle={this.menuHandle.bind(this)} headTitle={this.state.headTitle}/>
                     <Route path='/' render={({history,location})=>{
                         return <LeftNav show={this.state.isLeftNav} 
@@ -49,8 +48,7 @@ export default class App extends Component {
                     <Route path='/me' component={Me} />
                     <Route path='/clip' component={Clip} /> 
                     <Route path='/address' component={Address} />
-                    <Route path='/details/:id' component={Details} /> 
-                    <Route path='/reserve/:id' component={Reserve}  />             
+                    <Route path='/details/:id' component={Details} />                
                 </div>
             </BrowserRouter>
         )

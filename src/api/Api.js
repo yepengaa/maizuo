@@ -11,7 +11,12 @@ const detailsApi = '/v4/api/film/'
 const filmApi = '/v4/api/film/now-playing?&count=7'
 //请求即将上映http://m.maizuo.com/v4/api/film/coming-soon?page=1&count=7
 const comingSoonApi = '/v4/api/film/coming-soon?count=7'
-
+//城市数据http://m.maizuo.com/v4/api/city?__t=1503452398479
+const addressApi = '/v4/api/city'
+//影院数据http://m.maizuo.com/v4/api/cinema?__t=1503471947023
+const movieApi = '/v4/api/cinema'
+//预定数据http://m.maizuo.com/v4/api/cinema/5901?__t=1503495072690
+const reserveApi = '/v4/api/cinema/'
 
 export default{
     homeBannerApi,
@@ -19,7 +24,10 @@ export default{
     beAboutTo,
     detailsApi,
     filmApi,
-    comingSoonApi
+    comingSoonApi,
+    addressApi,
+    movieApi,
+    reserveApi
 }
 
 
