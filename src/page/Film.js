@@ -116,6 +116,8 @@ export default class film extends Component{
         let n=1;
         scroll.on("scrollEnd",()=>{
             var Y = scroll.y-scroll.maxScrollY;
+            console.log(scroll.y)
+            console.log(scroll.maxScrollY)
             if(Y==0){
                 // console.log(11)
                 n++;

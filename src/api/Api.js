@@ -17,6 +17,10 @@ const addressApi = '/v4/api/city'
 const movieApi = '/v4/api/cinema'
 //预定数据http://m.maizuo.com/v4/api/cinema/5901?__t=1503495072690
 const reserveApi = '/v4/api/cinema/'
+//影院上播映影片http://m.maizuo.com/v4/api/cinema/230/film?__t=1503648429141
+const playApi = '/v4/api/cinema/'
+//影院排片信息http://m.maizuo.com/v4/api/schedule?__t=1503626835273&film=0&cinema=4895
+const rowPieceApi = '/v4/api/schedule'
 
 export default{
     homeBannerApi,
@@ -27,7 +31,9 @@ export default{
     comingSoonApi,
     addressApi,
     movieApi,
-    reserveApi
+    reserveApi,
+    playApi,
+    rowPieceApi
 }
 
 

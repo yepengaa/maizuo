@@ -12,6 +12,7 @@ import Clip from './page/Clip.js'
 import Address from './page/Address.js'
 import Details from './page/Details'
 import Reserve from './page/Reserve'
+import RowPiece from './page/RowPiece'
 
 import HeaderCom from './views/common/AppHeader.js';
 import LeftNav from './views/common/LeftNav.js';
@@ -50,7 +51,8 @@ export default class App extends Component {
                     <Route path='/clip' component={Clip} /> 
                     <Route path='/address' component={Address} />
                     <Route path='/details/:id' component={Details} /> 
-                    <Route path='/reserve/:id' component={Reserve}  />             
+                    <Route path='/reserve/:id' component={Reserve}  />    
+                    <Route path="/rowpiece/:id" component={RowPiece}/>         
                 </div>
             </BrowserRouter>
         )

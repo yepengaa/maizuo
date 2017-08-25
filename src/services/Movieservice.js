@@ -54,12 +54,67 @@ function getReserve(id){
         })
     })
 }
-
-
+//请求影院播放影片的数据
+function getPlayApi(id){
+    return new Promise((resolve,reject)=>{
+        axios.get(`${API.playApi}${id}/film?__t=${new Date().getTime()}`)
+        .then((response)=>{
+            console.log(response)
+            var newArr=response.data.data.filmList.map((item)=>{
+                var obj = {};
+                obj.filmID = item.filmID;
+                obj.filmName = item.filmName;
+                obj.posterAddress = item.posterAddress;
+                return obj
+            })
+            resolve(newArr);
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    })
+}
+//请求影院排片
+function getRowPiece(id){
+    return new Promise((resolve,reject)=>{
+        axios.get(`${API.rowPieceApi}?__t=${new Date().getTime()}&film=0&cinema=${id}`)
+        .then((response)=>{
+            console.log(response);
+            var arr=response.data.data.schedules.map((item)=>{
+                var obj={};
+                obj.id=item.id;
+                obj.hall=item.hall.name;
+                obj.imagery=item.imagery;
+                obj.price=item.price.min;
+                obj.cinema = item.cinema;
+                var d = new Date(item.showAt);
+                var hour1 = d.getHours>=10?d.getHours:"0"+d.getHours;
+                var minute1 = d.getMinutes>=10?d.getMinutes:"0"+d.getMinutes;
+                obj.showAt = hour1+":"+minute1;
+                var d2 = new Date(item.stopSellingAt)
+                var hour2 = d2.getHours>=10?d2.getHours:"0"+d2.getHours;
+                var minute2 = d2.getMinutes>=10?d2.getMinutes:"0"+d2.getMinutes;
+                obj.stopSellingAt = hour2+":"+minute2;
+                if(item.labels.length>0){
+                    obj.discounts=item.labels[0].name
+                }else{
+                    obj.discounts=false
+                }
+                return obj
+            })
+            resolve(arr)
+        })
+        .catch((error)=>{
+            console.log(error);
+        })
+    })
+}
 
 export default{
     getMovie,
-    getReserve
+    getReserve,
+    getPlayApi,
+    getRowPiece
 }
 
 
