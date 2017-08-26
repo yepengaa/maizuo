@@ -13,6 +13,7 @@ import Address from './page/Address.js'
 import Details from './page/Details'
 import Reserve from './page/Reserve'
 import RowPiece from './page/RowPiece'
+import ShoppingCar from './page/ShoppingCar'
 
 import HeaderCom from './views/common/AppHeader.js';
 import LeftNav from './views/common/LeftNav.js';
@@ -52,7 +53,8 @@ export default class App extends Component {
                     <Route path='/address' component={Address} />
                     <Route path='/details/:id' component={Details} /> 
                     <Route path='/reserve/:id' component={Reserve}  />    
-                    <Route path="/rowpiece/:id" component={RowPiece}/>         
+                    <Route path="/rowpiece/:id" component={RowPiece}/>    
+                    <Route path='/shopcar/:id/:name/:address' component={ShoppingCar}/>     
                 </div>
             </BrowserRouter>
         )

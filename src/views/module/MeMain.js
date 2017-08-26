@@ -51,5 +51,8 @@ export default class Memain extends Component{
 
     quit(){
         this.props.isQuit();
+        var d=new Date();
+        d.setDate(d.getDate-2);
+        document.cookie=encodeURIComponent("users")+'=;expires='+d;
     }
 }

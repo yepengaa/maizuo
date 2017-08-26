@@ -42,6 +42,19 @@ export default class Me extends Component{
         this.setState({userName:''})
         this.setState({isLogin:false})
     }
+    componentWillMount(){
+        var cookie = decodeURIComponent(document.cookie);
+        var arr = cookie.split(";");
+        for (var i=0; i<arr.length; i++) {
+            var arr2 = arr[i].split("=");
+            if (arr2.length >= 2) {
+                if (arr2[0] == 'users') {
+                    this.setState({isLogin:true})
+                }
+            }
+        }
+       
+    }
 
 
 

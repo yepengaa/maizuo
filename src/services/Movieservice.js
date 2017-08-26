@@ -109,12 +109,46 @@ function getRowPiece(id){
         })
     })
 }
+//请求小卖品数据
+function getShoppingCar(id){
+    return new Promise((resolve,reject)=>{
+        axios.get(`${API.shoppingCarApi}${id}/item?__t=${new Date().getTime()}`)
+        .then((response)=>{
+            console.log(response)
+            var arr=response.data.data.items;
+            var newArr=[]
+            for(let i=0;i<arr.length;i++){
+                if(arr[i].name.indexOf('套餐')!=-1||arr[i].name.indexOf('12oz')!=-1){
+                    newArr.push(arr[i]);
+                }
+            }
+            console.log(newArr)
+            var newData=newArr.map((item)=>{
+                var obj={}
+                obj.id=item.id;
+                obj.notices=item.notices[0];
+                obj.name=item.name;
+                obj.imageUrl=item.extra.sundry.imageUrl;
+                obj.cinema=item.price.cinema;
+                obj.maizuo=item.price.maizuo;
+                obj.num=0;
+                obj.isChecked=false;
+                return obj;
+            })
+            resolve(newData);
+        })
+        .catch((error)=>{
+            console.log(error);
+        })
+    })
+}
 
 export default{
     getMovie,
     getReserve,
     getPlayApi,
-    getRowPiece
+    getRowPiece,
+    getShoppingCar
 }
 
 

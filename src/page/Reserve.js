@@ -75,7 +75,7 @@ export default class Reserve extends Component{
                         <li>
                             <div class="icon"><i class="iconfont icon-gouwuchekong"></i></div>
                             <div class="bottom_1px reserve_text">
-                                <h3><strong>小卖品</strong><button>购买</button></h3>
+                                <h3><strong>小卖品</strong><button onClick={this.goCar.bind(this,this.state.reserveData.id,this.state.reserveData.name,this.state.reserveData.address)}>购买</button></h3>
                             </div>                            
                         </li>
                         <li>
@@ -105,6 +105,9 @@ export default class Reserve extends Component{
             </div>
         )
     }
+    goCar(id,name,address){
+        this.state.history.push('/shopcar/'+id+'/'+name+'/'+address)
+    }
     gobuyTickets(id){
         this.state.history.push('/rowpiece/'+id)
     }
@@ -133,6 +136,7 @@ export default class Reserve extends Component{
         let id = this.state.match.params.id
         Movieservice.getReserve(id)
         .then((data)=>{
+            console.log(data)
             this.setState({reserveData:data});
         })
     }

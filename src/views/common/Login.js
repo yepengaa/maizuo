@@ -32,9 +32,17 @@ export default class Login extends Component{
             this.props.userData(name)
             this.setState({pwd:''})
             this.setState({username:''})
+
+            let obj={}
+            obj.username=name;
+            obj.pwd=pwd;
+            var d = new Date();
+            d.setDate(d.getDate+1);
+            document.cookie=encodeURIComponent("users")+'='+encodeURIComponent(obj)+';expires='+d;
         }
         
     }
+    
 
 
 

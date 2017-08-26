@@ -21,6 +21,8 @@ const reserveApi = '/v4/api/cinema/'
 const playApi = '/v4/api/cinema/'
 //影院排片信息http://m.maizuo.com/v4/api/schedule?__t=1503626835273&film=0&cinema=4895
 const rowPieceApi = '/v4/api/schedule'
+//请求小卖品数据http://m.maizuo.com/v4/api/cinema/256/item?__t=1503712466509
+const shoppingCarApi = '/v4/api/cinema/'
 
 export default{
     homeBannerApi,
@@ -33,7 +35,8 @@ export default{
     movieApi,
     reserveApi,
     playApi,
-    rowPieceApi
+    rowPieceApi,
+    shoppingCarApi
 }
 
 
