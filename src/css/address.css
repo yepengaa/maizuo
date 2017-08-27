@@ -19,7 +19,8 @@
 #city .hot_city ul li,#city .letter ul li,.city_list>li>ul>li{width:25%;height:40px;line-height:40px;text-align: center;color:#666;font-size:16px;}
 #city .letter ul,.city_list>li>ul{display: flex;flex-wrap:wrap;}
 #city .letter ul li{}
-
+#city .scroll_top{position:fixed;right:10px;bottom:-40px;width:30px;height: 30px;border-radius:50%;
+    background:rgba(0,0,0,0.6);border: none;outline: none;font-size:18px;color:#fff;transition:all 1s;}
 
 
 

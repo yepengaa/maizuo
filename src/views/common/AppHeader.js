@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 
+import store from '../../store'
 import {Link} from 'react-router-dom'
 import '../../css/header.css'
 
+let unsubscribe;
 export default class Header extends Component {
+    constructor(){
+        super();
+        this.state={
+            city:store.getState().cityName
+        }
+    }
     
     render() {
         return (
@@ -13,7 +21,7 @@ export default class Header extends Component {
                     <span class='text'>{this.props.headTitle}</span>
                 </div>
                 <div class="head_right">
-                    <Link to='/address' class="iconfont icon-shangxiajiantou">深圳</Link>
+                    <Link to='/address' class="iconfont icon-shangxiajiantou">{this.state.city}</Link>
                     <Link to='/me' class="iconfont icon-ren"></Link>
                 </div>
             </div>
@@ -24,6 +32,14 @@ export default class Header extends Component {
     goLeftNav(){
         this.props.menuHandle();
     }
-
+    componentWillMount(){
+        unsubscribe = store.subscribe(()=>{
+			console.log('one 触发了1');
+			this.setState({city: store.getState().cityName});
+		});
+    }
+    componentWillUnmount(){
+        unsubscribe()
+    }
 
 }
